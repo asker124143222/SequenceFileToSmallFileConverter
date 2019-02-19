@@ -47,8 +47,13 @@ public class MultiOutputMapper extends Mapper<Text,BytesWritable,NullWritable,Te
         System.arraycopy(value.getBytes(),0,bytes,0,length);
 
         Text contents = new Text(bytes);
-        System.out.println(contents.toString());
-        multipleOutputs.write(NullWritable.get(),new Text(bytes),key.toString());
+        //根据SequenceFile里key的原路径路径生成文件
+//        multipleOutputs.write(NullWritable.get(),new Text(bytes),key.toString());
+
+        //在output里输出文件
+        Path path = new Path(key.toString());
+        String outputFileName = String.format("%s/%s","2019",path.getName());
+        multipleOutputs.write(NullWritable.get(),new Text(bytes),outputFileName);
 //
 //        multipleOutputs.write(NullWritable.get(),new Text(value.getBytes()),key.toString());//这句是错的。
 //        通过测试，对于SequenceFile，是按key进入分片，value的length是实际长度,value.getbytes的长度是value的buff长度，两个不一定相等

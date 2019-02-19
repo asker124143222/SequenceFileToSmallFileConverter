@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SequenFileToSmallFileConverter.iml" filepath="$PROJECT_DIR$/SequenFileToSmallFileConverter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SequenceFileToSmallFileConverter.iml" filepath="$PROJECT_DIR$/SequenceFileToSmallFileConverter.iml" />
     </modules>
   </component>
 </project>
